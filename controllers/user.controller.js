@@ -1,27 +1,30 @@
 const db = require('../dataBase/users');
+const help = require('../helper/helper');
 
 module.exports = {
-    getUsers: (req, res)=>{
+    getUser: (req, res)=>{
         res.json(db);
+        help();
     },
 
-    getUserById:(req, res)=>{
-        const { user_id } = req.params;
+    // getUserById:(req, res)=>{
+    //     const { user_id } = req.params;
+    //
+    //     const user = db[user_id - 1];
+    //
+    //     res.json({ user });
+    // },
 
-        const user = db[user_id - 1];
-
-        res.json({ user });
-    },
-
-    createUsers: (req, res)=>{
+    createUser: (req, res)=>{
         console.log(req.body);
 
         db.push({...req.body, id: db.length + 1});
-
         res.json(db);
+        help();
     },
 
-    updateUsers: (req, res)=>{
-        res.json('UPDATE USER');
+    deleteUser: (req, res)=>{
+        res.json('DELETE USER');
+        help();
     }
 }

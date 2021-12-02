@@ -1,13 +1,19 @@
-const express = require('express');
+// const x = require('./file/user');
+//
+// x.createUser('Katya','20')
+//
+// console.log('****************');
+// console.log(__dirname);
+// console.log(__filename);
+// console.log('****************');
+//
 
-const app = express();
-app.use(express.json());
-app.use(express.urlencoded({extended:true}));
+const fs = require('fs');
 
-const userRouter = require ('./routes/user.router');
+const filePath = __dirname + '/file/file1.txt'
 
-app.use('/users', userRouter);
-
-app.listen(5000, ()=>{
-    console.log(`App listen 5000`)
-});
+fs.writeFile(filePath, 'Hello world', err => {
+    if (err){
+        console.log(err);
+    }
+})

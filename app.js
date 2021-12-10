@@ -1,78 +1,48 @@
 const fs = require("fs");
 const express = require('express');
-
+const {parse} = require("eslint-plugin-import/memo-parser");
+const path = require('path');
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-// const userRouter = require('./routes/user.router');
+const boys = path.join(process.cwd(), 'dataBaseBoys');
+const girls = path.join(process.cwd(), 'dataBaseGirls');
 
-// app.use('/users', userRouter);
+fs.readdir(boys, (err, files) => {
+    if (err) {
+        console.log(err);
+    }
+    for (let file of files) {
+        fs.readFile(path.join(boys, file), (err, data) => {
+            const user = JSON.parse(data.toString());
+            if (user.gender === 'female') {
+                fs.rename(path.join(boys, file), path.join(girls, file), err1 => {
+                    if (err1){
+                    console.log(err1);
+                    }
+                })
+            }
 
-app.listen(5000, () => {
-    console.log(`App listen 5000`)
+        })
+    }
 });
 
-const boys = require('./dataBaseBoys/boys.json');
-const girls = require('./dataBaseGirls/girls.json');
+fs.readdir(girls, (err, files) => {
+    if (err) {
+        console.log(err);
+    }
+    for (let file of files) {
+        fs.readFile(path.join(girls, file), (err, data) => {
+            const user2 = JSON.parse(data.toString());
+            if (user2.gender === 'male') {
+                fs.rename(path.join(girls, file), path.join(boys, file), err1 => {
+                    if (err1){
+                    console.log(err1);
+                    }
+                })
+            }
 
-fs.
-
-
-//
-// boys.forEach(data => {
-//     if (gender === male)
-//     {
-//         fs.rename(`${__dirname}/dataBaseGirls/girls.json`, `${__dirname}/dataBaseBoys/boys.json`, err => {
-//             if (err) {
-//                 console.log(err);
-//                 console.log('*********************');
-//                 console.log(__dirname);
-//                 console.log('*********************');
-//             }
-//         })
-//     }
-// ) else{
-//         (gender === {gender:female === true} =>
-//         {
-//             fs.rename(`${__dirname}/dataBaseBoys/boys.json`, `${__dirname}/dataBaseGirls/girls.json`, err => {
-//                 if (err) {
-//                     console.log(err);
-//                     console.log('*********************');
-//                     console.log(__dirname);
-//                     console.log('*********************');
-//                 }
-//             })
-//         },
-//     )
-//     }
-// });
-//
-//
-// girls.forEach(data => {
-//     if (gender === {gender:male === true} =>
-//     {
-//         fs.rename(`${__dirname}/dataBaseGirls/girls.json`, `${__dirname}/dataBaseBoys/boys.json`, err => {
-//             if (err) {
-//                 console.log(err);
-//                 console.log('*********************');
-//                 console.log(__dirname);
-//                 console.log('*********************');
-//             }
-//         })
-//     }
-// ) else{
-//         (gender === {gender:female === true} =>
-//         {
-//             fs.rename(`${__dirname}/dataBaseBoys/boys.json`, `${__dirname}/dataBaseGirls/girls.json`, err => {
-//                 if (err) {
-//                     console.log(err);
-//                     console.log('*********************');
-//                     console.log(__dirname);
-//                     console.log('*********************');
-//                 }
-//             })
-//         },
-//     )
-//     }
-// })
+        })
+    }
+});

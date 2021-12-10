@@ -1,0 +1,36 @@
+{
+  "name": "dataBaseBoys",
+  "version": "1.0.0",
+  "dependencies": {
+  }
+}
+const boys = {
+{
+  "id": 11,
+  "name": 'Dimka',
+  "age": 51,
+  "gender": "male"
+},
+{"id": 22,
+"name": 'Kate',
+"age": 41,
+"gender": "female"
+},
+{
+"id": 43,
+"name": 'Mary',
+"age": 21,
+"gender": "female"
+},
+{
+"id": 67,
+"name": 'Oleg',
+"age": 11,
+"gender": "male"
+}
+}
+
+
+module.exports = {
+boys
+}

@@ -1,0 +1,41 @@
+{
+  "name": "dataBaseGirls",
+  "version": "1.0.0",
+  "dependencies": {
+  }
+}
+const girls = {
+{
+  "id": 1,
+  "name": 'Dima',
+  "age": 51,
+  "gender": "male"
+},
+{"id": 2,
+"name": 'Katya',
+"age": 41,
+"gender": "female"
+},
+{
+"id": 3,
+"name": 'Dima',
+"age": 31,
+"gender": "male"
+},
+{
+"id": 4,
+"name": 'Olya',
+"age": 21,
+"gender": "female"
+},
+{
+"id": 5,
+"name": 'Max',
+"age": 11,
+"gender": "male"
+}
+}
+
+module.exports = {
+girls
+}

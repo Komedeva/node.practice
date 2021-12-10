@@ -11,49 +11,49 @@
 const fs = require('fs');
 const path = require('path');
 
-let s = path.join(__dirname, 'file', 'user.js');
-console.log(s);
-
-
-const filePath = __dirname + '/file/file1.txt'
-const namePath = __dirname + '/file'
-
-fs.writeFile(filePath, 'Hello world', err => {
-    if (err){
-        console.log(err);
-    }
-})
+// let s = path.join(__dirname, 'file', 'user.js');
+// console.log(s);
+//
+//
+// const filePath = __dirname + '/file/file1.txt'
+// const namePath = __dirname + '/file'
+//
+// fs.writeFile(filePath, 'Hello world', err => {
+//     if (err){
+//         console.log(err);
+//     }
+// })
 //створити файл
-
-fs.appendFile(filePath, 'hello \n', err => {
-    if (err) {
-        console.log(err);
-    }
-})
+//
+// fs.appendFile(filePath, 'hello \n', err => {
+//     if (err) {
+//         console.log(err);
+//     }
+// })
 //додати інфу
 
-fs.mkdir(`${__dirname}/netflix/film/lava`, { recursive:true }, err => {
-    if (err){
-        console.log(err);
-    }
-})
+// fs.mkdir(`${__dirname}/netflix/film/lava`, { recursive:true }, err => {
+//     if (err){
+//         console.log(err);
+//     }
+// })
 //створити директорію
 
 
-fs.rmdir(`${__dirname}/netflix/film/lava`, { recursive: true }, err => {
-    if (err){
-        console.log(err);
-    }
-})
+// fs.rmdir(`${__dirname}/netflix/film/lava`, { recursive: true }, err => {
+//     if (err){
+//         console.log(err);
+//     }
+// })
 //видалення
 
 
-fs.readdir(namePath, (err, files) =>{
-    if (err){
-        console.log(err)
-    }
-    console.log(files);
-} )
+// fs.readdir(namePath, (err, files) =>{
+//     if (err){
+//         console.log(err)
+//     }
+//     console.log(files);
+// } )
 //прочитала що всередині
 
 // file.forEach(value=>{
@@ -73,19 +73,19 @@ fs.readdir(namePath, (err, files) =>{
 //стерти
 
 
-fs.rename(`${__dirname}/file/file1.txt`, `${__dirname}/netflix/film/okten.txt`, err => {
-    if (err){
-        console.log(err);
-        console.log('*********************');
-        console.log(__dirname);
-        console.log('*********************');
-    }
-})
+// fs.rename(`${__dirname}/file/file1.txt`, `${__dirname}/netflix/film/okten.txt`, err => {
+//     if (err){
+//         console.log(err);
+//         console.log('*********************');
+//         console.log(__dirname);
+//         console.log('*********************');
+//     }
+// })
 
 
-const readStream = fs.createReadStream(filePath);
-const writeStream = fs.createWriteStream(filePath);
-
+// const readStream = fs.createReadStream(filePath);
+// const writeStream = fs.createWriteStream(filePath);
+//
 // readStream.on("data",chunk =>{
 //     console.log(chunk);
 // })
@@ -93,7 +93,7 @@ const writeStream = fs.createWriteStream(filePath);
 // readStream.on("end", ()=>{
 //     console.log('jxscjskic')
 // })
-
-for (let i = 0; i < 1000; i++) {
-    writeStream.write('HELLO WORLD')
-}
+//
+// for (let i = 0; i < 1000; i++) {
+//     writeStream.write('HELLO WORLD')
+// }

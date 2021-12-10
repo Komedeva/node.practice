@@ -1,3 +1,4 @@
+const fs = require("fs");
 const express = require('express');
 
 const app = express();
@@ -12,13 +13,66 @@ app.listen(5000, () => {
     console.log(`App listen 5000`)
 });
 
-const boys = require('./dataBaseBoys/package.json');
-const girls = require('./dataBaseBoys/package.json');
+const boys = require('./dataBaseBoys/boys.json');
+const girls = require('./dataBaseGirls/girls.json');
+
+fs.
 
 
-boys.forEach(data=>{
-    if {gender === male
-    }else {
-
-    }
-})
+//
+// boys.forEach(data => {
+//     if (gender === male)
+//     {
+//         fs.rename(`${__dirname}/dataBaseGirls/girls.json`, `${__dirname}/dataBaseBoys/boys.json`, err => {
+//             if (err) {
+//                 console.log(err);
+//                 console.log('*********************');
+//                 console.log(__dirname);
+//                 console.log('*********************');
+//             }
+//         })
+//     }
+// ) else{
+//         (gender === {gender:female === true} =>
+//         {
+//             fs.rename(`${__dirname}/dataBaseBoys/boys.json`, `${__dirname}/dataBaseGirls/girls.json`, err => {
+//                 if (err) {
+//                     console.log(err);
+//                     console.log('*********************');
+//                     console.log(__dirname);
+//                     console.log('*********************');
+//                 }
+//             })
+//         },
+//     )
+//     }
+// });
+//
+//
+// girls.forEach(data => {
+//     if (gender === {gender:male === true} =>
+//     {
+//         fs.rename(`${__dirname}/dataBaseGirls/girls.json`, `${__dirname}/dataBaseBoys/boys.json`, err => {
+//             if (err) {
+//                 console.log(err);
+//                 console.log('*********************');
+//                 console.log(__dirname);
+//                 console.log('*********************');
+//             }
+//         })
+//     }
+// ) else{
+//         (gender === {gender:female === true} =>
+//         {
+//             fs.rename(`${__dirname}/dataBaseBoys/boys.json`, `${__dirname}/dataBaseGirls/girls.json`, err => {
+//                 if (err) {
+//                     console.log(err);
+//                     console.log('*********************');
+//                     console.log(__dirname);
+//                     console.log('*********************');
+//                 }
+//             })
+//         },
+//     )
+//     }
+// })
